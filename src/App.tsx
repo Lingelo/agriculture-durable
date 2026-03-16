@@ -1,9 +1,11 @@
 import { useState, useMemo } from 'react';
 import { useData } from './hooks/useData';
+import { timeAgo } from './utils/format';
 import { MapView } from './components/MapView';
 import { Header } from './components/Header';
 import { DepartmentPanel } from './components/DepartmentPanel';
 import { Legend } from './components/Legend';
+import { AboutModal } from './components/AboutModal';
 import type { ProductionFilter } from './types';
 import { PRODUCTION_KEYWORDS } from './types';
 
@@ -15,6 +17,7 @@ function App() {
   const [selectedDept, setSelectedDept] = useState<string | null>(null);
   const [productionFilter, setProductionFilter] =
     useState<ProductionFilter>('Toutes');
+  const [showAbout, setShowAbout] = useState(false);
 
   // Filter bio farms by production type
   const filteredBioFarms = useMemo(() => {
@@ -98,13 +101,27 @@ function App() {
         />
       </div>
 
-      {/* Stats summary */}
+      {/* Stats summary + footer */}
       <div className="glass pointer-events-auto absolute right-4 bottom-6 z-20 hidden rounded-lg border border-gray-200/50 px-3 py-2 text-xs text-gray-600 shadow-sm md:block">
         {filteredBioFarms.length.toLocaleString('fr-FR')} fermes bio
         {pesticides && (
           <> | {Object.keys(pesticides.departments).length} departements</>
         )}
+        {pesticides?.meta.generatedAt && (
+          <> | {timeAgo(pesticides.meta.generatedAt)}</>
+        )}
+        {' | '}
+        <button onClick={() => setShowAbout(true)} className="underline hover:text-gray-900">
+          A propos
+        </button>
       </div>
+
+      {showAbout && (
+        <AboutModal
+          onClose={() => setShowAbout(false)}
+          lastUpdate={pesticides?.meta.generatedAt}
+        />
+      )}
     </div>
   );
 }
