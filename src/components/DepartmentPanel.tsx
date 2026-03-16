@@ -1,10 +1,11 @@
 import type { DepartmentPesticides, BioFarm } from '../types';
-import { formatKg, formatNumber, formatRatio } from '../utils/format';
+import { formatKg, formatNumber, formatRatio, formatPerHa } from '../utils/format';
 
 interface Props {
   deptCode: string;
   pesticides: DepartmentPesticides | null;
   bioFarms: BioFarm[];
+  sauHa: number;
   onClose: () => void;
   visible: boolean;
 }
@@ -27,6 +28,7 @@ export function DepartmentPanel({
   deptCode,
   pesticides,
   bioFarms,
+  sauHa,
   onClose,
   visible,
 }: Props) {
@@ -40,11 +42,12 @@ export function DepartmentPanel({
   return (
     <>
       {/* Desktop sidebar */}
-      <div className="glass panel-scroll pointer-events-auto absolute top-0 right-0 bottom-0 z-20 hidden w-80 overflow-y-auto border-l border-gray-200/50 pt-16 shadow-lg md:block">
+      <div className="glass panel-scroll pointer-events-auto absolute top-0 right-0 bottom-0 z-20 hidden w-80 overflow-y-auto border-l border-gray-200/50 pt-14 shadow-lg md:block">
         <PanelContent
           deptCode={deptCode}
           pesticides={pesticides}
           deptBioCount={deptBioCount}
+          sauHa={sauHa}
           maxBar={maxBar}
           onClose={onClose}
         />
@@ -56,6 +59,7 @@ export function DepartmentPanel({
           deptCode={deptCode}
           pesticides={pesticides}
           deptBioCount={deptBioCount}
+          sauHa={sauHa}
           maxBar={maxBar}
           onClose={onClose}
         />
@@ -68,15 +72,19 @@ function PanelContent({
   deptCode,
   pesticides,
   deptBioCount,
+  sauHa,
   maxBar,
   onClose,
 }: {
   deptCode: string;
   pesticides: DepartmentPesticides | null;
   deptBioCount: number;
+  sauHa: number;
   maxBar: number;
   onClose: () => void;
 }) {
+  const perHa = pesticides && sauHa > 0 ? pesticides.total / sauHa : 0;
+
   return (
     <div className="p-4">
       {/* Header */}
@@ -112,6 +120,24 @@ function PanelContent({
           <div className="text-xs text-red-600">Pesticides vendus</div>
         </div>
       </div>
+
+      {/* Per hectare + SAU */}
+      {pesticides && sauHa > 0 && (
+        <div className="mb-4 grid grid-cols-2 gap-3">
+          <div className="rounded-lg bg-amber-50 p-3">
+            <div className="text-lg font-bold text-amber-700">
+              {perHa.toFixed(1)} kg/ha
+            </div>
+            <div className="text-[10px] text-amber-600">Intensite pesticides</div>
+          </div>
+          <div className="rounded-lg bg-gray-50 p-3">
+            <div className="text-lg font-bold text-gray-700">
+              {formatNumber(sauHa)} ha
+            </div>
+            <div className="text-[10px] text-gray-600">Surface agricole</div>
+          </div>
+        </div>
+      )}
 
       {/* Sustainability indicator */}
       {pesticides && (

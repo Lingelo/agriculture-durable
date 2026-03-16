@@ -27,6 +27,17 @@ export interface PesticideData {
   departments: Record<string, DepartmentPesticides>;
 }
 
+export interface SAUData {
+  meta: {
+    source: string;
+    unit: string;
+    generatedAt: string;
+  };
+  departments: Record<string, number>;
+}
+
+export type MapMode = 'pesticides' | 'pesticides_ha' | 'paradoxe';
+
 export type ProductionFilter =
   | 'Toutes'
   | 'Viticulture'
@@ -43,6 +54,12 @@ export const PRODUCTION_FILTERS: ProductionFilter[] = [
   'Elevage',
   'Arboriculture',
 ];
+
+export const MAP_MODE_LABELS: Record<MapMode, string> = {
+  pesticides: 'Pesticides (brut)',
+  pesticides_ha: 'Pesticides / ha',
+  paradoxe: 'Paradoxe bio',
+};
 
 /** Keywords used to match productions to filter categories */
 export const PRODUCTION_KEYWORDS: Record<Exclude<ProductionFilter, 'Toutes'>, string[]> = {

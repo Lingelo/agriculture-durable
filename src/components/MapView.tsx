@@ -2,11 +2,11 @@ import { useEffect, useRef, useCallback, useMemo } from 'react';
 import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet.markercluster';
-import type { BioFarm, DepartmentPesticides } from '../types';
+import type { BioFarm, DepartmentPesticides, MapMode, SAUData } from '../types';
 import type { FeatureCollection, Feature } from 'geojson';
-import { getPesticideColor, getPesticideOpacity } from '../utils/colors';
+import { getPesticideColor, getPesticideOpacity, getParadoxColor } from '../utils/colors';
 import { renderBioPopupHTML } from '../utils/bio-popup';
-import { formatKg } from '../utils/format';
+import { formatKg, formatPerHa, formatNumber } from '../utils/format';
 
 // Fix default marker icons in bundled environments
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
@@ -23,8 +23,11 @@ interface Props {
   bioFarms: BioFarm[];
   pesticides: Record<string, DepartmentPesticides> | null;
   departmentsGeo: FeatureCollection | null;
+  sau: SAUData | null;
+  bioByDept: Map<string, number>;
   showBio: boolean;
   showPesticides: boolean;
+  mapMode: MapMode;
   onDepartmentClick: (deptCode: string | null) => void;
   selectedDept: string | null;
 }
@@ -55,7 +58,7 @@ function BioMarkerLayer({
 
   useEffect(() => {
     if (clusterRef.current) {
-      map.removeLayer(clusterRef.current);
+      try { map.removeLayer(clusterRef.current); } catch { /* already removed */ }
       clusterRef.current = null;
     }
 
@@ -85,7 +88,7 @@ function BioMarkerLayer({
 
     return () => {
       if (clusterRef.current) {
-        map.removeLayer(clusterRef.current);
+        try { map.removeLayer(clusterRef.current); } catch { /* already removed */ }
         clusterRef.current = null;
       }
     };
@@ -94,22 +97,67 @@ function BioMarkerLayer({
   return null;
 }
 
+/** Fly to department when selected */
+function FlyToDept({ deptCode, geo }: { deptCode: string | null; geo: FeatureCollection | null }) {
+  const map = useMap();
+  const prevDept = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!deptCode || !geo || deptCode === prevDept.current) return;
+    prevDept.current = deptCode;
+
+    const feature = geo.features.find(
+      (f) => f.properties?.code === deptCode,
+    );
+    if (!feature) return;
+
+    const layer = L.geoJSON(feature);
+    const bounds = layer.getBounds();
+    map.flyToBounds(bounds, { padding: [50, 50], maxZoom: 9 });
+  }, [deptCode, geo, map]);
+
+  return null;
+}
+
 function ChoroplethLayer({
   geo,
   pesticides,
+  sau,
+  bioByDept,
   visible,
+  mapMode,
   onDepartmentClick,
   selectedDept,
 }: {
   geo: FeatureCollection;
   pesticides: Record<string, DepartmentPesticides>;
+  sau: SAUData | null;
+  bioByDept: Map<string, number>;
   visible: boolean;
+  mapMode: MapMode;
   onDepartmentClick: (deptCode: string | null) => void;
   selectedDept: string | null;
 }) {
-  const maxTotal = useMemo(() => {
-    return Math.max(...Object.values(pesticides).map((d) => d.total), 1);
-  }, [pesticides]);
+  // Compute values for current mode
+  const { valueMap, maxVal } = useMemo(() => {
+    const vm = new Map<string, number>();
+    for (const [code, d] of Object.entries(pesticides)) {
+      const sauHa = sau?.departments[code] ?? 0;
+      const bio = bioByDept.get(code) ?? 0;
+      let val = 0;
+      if (mapMode === 'pesticides') {
+        val = d.total;
+      } else if (mapMode === 'pesticides_ha') {
+        val = sauHa > 0 ? d.total / sauHa : 0;
+      } else {
+        // paradoxe: pesticides/ha × log(bio+1)
+        const perHa = sauHa > 0 ? d.total / sauHa : 0;
+        val = perHa * Math.log10(bio + 1);
+      }
+      vm.set(code, val);
+    }
+    return { valueMap: vm, maxVal: Math.max(...vm.values(), 1) };
+  }, [pesticides, sau, bioByDept, mapMode]);
 
   const style = useCallback(
     (feature: Feature | undefined) => {
@@ -117,19 +165,20 @@ function ChoroplethLayer({
         return { fillOpacity: 0, weight: 0, opacity: 0 };
       }
       const code = feature.properties?.code as string | undefined;
-      const data = code ? pesticides[code] : undefined;
-      const total = data?.total ?? 0;
+      const val = code ? (valueMap.get(code) ?? 0) : 0;
       const isSelected = code === selectedDept;
 
+      const colorFn = mapMode === 'paradoxe' ? getParadoxColor : getPesticideColor;
+
       return {
-        fillColor: getPesticideColor(total, maxTotal),
-        fillOpacity: visible ? getPesticideOpacity(total, maxTotal) : 0,
+        fillColor: colorFn(val, maxVal),
+        fillOpacity: visible ? getPesticideOpacity(val, maxVal) : 0,
         color: isSelected ? '#1e40af' : '#6b7280',
         weight: isSelected ? 3 : 1,
         opacity: visible ? 0.6 : 0,
       };
     },
-    [pesticides, maxTotal, visible, selectedDept],
+    [valueMap, maxVal, visible, selectedDept, mapMode],
   );
 
   const onEachFeature = useCallback(
@@ -137,23 +186,29 @@ function ChoroplethLayer({
       const code = feature.properties?.code as string | undefined;
       const data = code ? pesticides[code] : undefined;
       const name = (feature.properties?.nom as string) ?? code ?? '';
+      const val = code ? (valueMap.get(code) ?? 0) : 0;
+      const bio = code ? (bioByDept.get(code) ?? 0) : 0;
+      const sauHa = code ? (sau?.departments[code] ?? 0) : 0;
 
-      // Tooltip
-      const tooltipContent = data
-        ? `<strong>${name}</strong><br/>Pesticides: ${formatKg(data.total)}`
-        : `<strong>${name}</strong>`;
+      let tooltipContent = `<strong>${name}</strong>`;
+      if (data) {
+        if (mapMode === 'pesticides') {
+          tooltipContent += `<br/>Pesticides: ${formatKg(data.total)}`;
+        } else if (mapMode === 'pesticides_ha') {
+          tooltipContent += `<br/>${formatPerHa(data.total, sauHa)}`;
+        } else {
+          tooltipContent += `<br/>${formatNumber(bio)} bio | ${formatPerHa(data.total, sauHa)}`;
+        }
+      }
 
       (layer as L.Path).bindTooltip(tooltipContent, {
         sticky: true,
         className: 'leaflet-tooltip',
       });
 
-      // Click
       (layer as L.Path).on('click', () => {
         if (code) onDepartmentClick(code);
       });
-
-      // Hover
       (layer as L.Path).on('mouseover', () => {
         (layer as L.Path).setStyle({ weight: 2, opacity: 0.9 });
       });
@@ -165,14 +220,14 @@ function ChoroplethLayer({
         });
       });
     },
-    [pesticides, onDepartmentClick, selectedDept],
+    [pesticides, sau, bioByDept, valueMap, onDepartmentClick, selectedDept, mapMode],
   );
 
   if (!visible) return null;
 
   return (
     <GeoJSON
-      key={`choropleth-${selectedDept ?? 'none'}`}
+      key={`choropleth-${selectedDept ?? 'none'}-${mapMode}`}
       data={geo}
       style={style}
       onEachFeature={onEachFeature}
@@ -184,8 +239,11 @@ export function MapView({
   bioFarms,
   pesticides,
   departmentsGeo,
+  sau,
+  bioByDept,
   showBio,
   showPesticides,
+  mapMode,
   onDepartmentClick,
   selectedDept,
 }: Props) {
@@ -206,13 +264,17 @@ export function MapView({
         <ChoroplethLayer
           geo={departmentsGeo}
           pesticides={pesticides}
+          sau={sau}
+          bioByDept={bioByDept}
           visible={showPesticides}
+          mapMode={mapMode}
           onDepartmentClick={onDepartmentClick}
           selectedDept={selectedDept}
         />
       )}
 
       <BioMarkerLayer farms={bioFarms} visible={showBio} />
+      <FlyToDept deptCode={selectedDept} geo={departmentsGeo} />
     </MapContainer>
   );
 }

@@ -19,6 +19,16 @@ export function formatKg(kg: number): string {
 }
 
 /**
+ * Format pesticides per hectare.
+ */
+export function formatPerHa(kgTotal: number, hectares: number): string {
+  if (hectares <= 0) return '--';
+  const perHa = kgTotal / hectares;
+  if (perHa >= 1000) return `${(perHa / 1000).toFixed(1)} t/ha`;
+  return `${perHa.toFixed(1)} kg/ha`;
+}
+
+/**
  * French relative time string from ISO date.
  */
 export function timeAgo(dateStr: string): string {

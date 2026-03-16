@@ -1,8 +1,9 @@
 /**
- * Choropleth color scale for pesticide usage.
- * Goes from light green (low) to dark red (high).
+ * Choropleth color scales for different map modes.
  */
-const SCALE = [
+
+// Pesticide scale: light green → dark red
+const PESTICIDE_SCALE = [
   '#d1fae5', // very low — emerald-100
   '#a7f3d0', // low — emerald-200
   '#fde68a', // medium-low — amber-200
@@ -13,23 +14,37 @@ const SCALE = [
   '#7f1d1d', // extreme — red-900
 ];
 
-/**
- * Returns a color from the scale based on the value relative to min/max.
- * Uses quantile-like breaks for better visual distribution.
- */
-export function getPesticideColor(value: number, max: number): string {
-  if (value <= 0) return '#f3f4f6'; // gray-100 for no data
-  // Use square root scale for better distribution (heavy right skew)
+// Paradox scale: green (good — lots of bio, few pesticides) → purple (bad — high pesticides despite bio)
+const PARADOX_SCALE = [
+  '#d1fae5', // very good
+  '#6ee7b7', // good
+  '#fde68a', // mixed
+  '#fbbf24', // concerning
+  '#f97316', // bad
+  '#ef4444', // very bad
+  '#a855f7', // paradoxical
+  '#7c3aed', // extreme paradox
+];
+
+export function getScaleColor(value: number, max: number, scale: string[]): string {
+  if (value <= 0) return '#f3f4f6';
   const ratio = Math.sqrt(value) / Math.sqrt(max);
-  const idx = Math.min(Math.floor(ratio * SCALE.length), SCALE.length - 1);
-  return SCALE[idx];
+  const idx = Math.min(Math.floor(ratio * scale.length), scale.length - 1);
+  return scale[idx];
 }
 
-/** Returns opacity for choropleth fill */
+export function getPesticideColor(value: number, max: number): string {
+  return getScaleColor(value, max, PESTICIDE_SCALE);
+}
+
+export function getParadoxColor(value: number, max: number): string {
+  return getScaleColor(value, max, PARADOX_SCALE);
+}
+
 export function getPesticideOpacity(value: number, max: number): number {
   if (value <= 0) return 0.1;
   const ratio = Math.sqrt(value) / Math.sqrt(max);
   return 0.3 + ratio * 0.45;
 }
 
-export { SCALE as PESTICIDE_SCALE };
+export { PESTICIDE_SCALE, PARADOX_SCALE };
