@@ -1,24 +1,24 @@
 {
   "meta": {
     "year": 2023,
-    "generatedAt": "2026-05-18T10:02:53.296Z"
+    "generatedAt": "2026-05-25T10:05:23.164Z"
   },
   "departments": {
     "10": {
       "nom": "AUBE",
-      "total": 2377680,
+      "total": 2377780,
       "herbicide": 1422078,
-      "fongicide": 633671,
+      "fongicide": 633771,
       "insecticide": 98190,
       "autres": 223741,
       "nbSubstances": 259
     },
     "11": {
       "nom": "AUDE",
-      "total": 1316728,
-      "herbicide": 134588,
-      "fongicide": 1145527,
-      "insecticide": 30476,
+      "total": 1316918,
+      "herbicide": 134651,
+      "fongicide": 1145635,
+      "insecticide": 30496,
       "autres": 6136,
       "nbSubstances": 288
     },
@@ -33,10 +33,10 @@
     },
     "13": {
       "nom": "BOUCHES-DU-RHONE",
-      "total": 840367,
-      "herbicide": 51713,
-      "fongicide": 598937,
-      "insecticide": 166238,
+      "total": 840220,
+      "herbicide": 51641,
+      "fongicide": 598865,
+      "insecticide": 166235,
       "autres": 23479,
       "nbSubstances": 295
     },
@@ -60,29 +60,29 @@
     },
     "16": {
       "nom": "CHARENTE",
-      "total": 1842441,
-      "herbicide": 641356,
-      "fongicide": 1096103,
-      "insecticide": 66420,
-      "autres": 38562,
+      "total": 1835175,
+      "herbicide": 635368,
+      "fongicide": 1094849,
+      "insecticide": 65545,
+      "autres": 39412,
       "nbSubstances": 271
     },
     "17": {
       "nom": "CHARENTE-MARITIME",
-      "total": 1408639,
-      "herbicide": 582358,
-      "fongicide": 734816,
-      "insecticide": 34079,
-      "autres": 57387,
+      "total": 1402047,
+      "herbicide": 577240,
+      "fongicide": 733388,
+      "insecticide": 34065,
+      "autres": 57354,
       "nbSubstances": 282
     },
     "18": {
       "nom": "CHER",
-      "total": 1126213,
-      "herbicide": 735980,
-      "fongicide": 302710,
+      "total": 1124840,
+      "herbicide": 734943,
+      "fongicide": 302377,
       "insecticide": 23414,
-      "autres": 64109,
+      "autres": 64106,
       "nbSubstances": 279
     },
     "19": {
@@ -96,19 +96,19 @@
     },
     "21": {
       "nom": "COTE-D'OR",
-      "total": 1066423,
-      "herbicide": 499473,
+      "total": 1065980,
+      "herbicide": 499035,
       "fongicide": 507147,
       "insecticide": 13454,
-      "autres": 46348,
+      "autres": 46343,
       "nbSubstances": 286
     },
     "22": {
       "nom": "COTES-D'ARMOR",
-      "total": 1316486,
+      "total": 614569,
       "herbicide": 441337,
       "fongicide": 104134,
-      "insecticide": 726248,
+      "insecticide": 24331,
       "autres": 44767,
       "nbSubstances": 253
     },
@@ -123,10 +123,10 @@
     },
     "24": {
       "nom": "DORDOGNE",
-      "total": 660274,
-      "herbicide": 167094,
-      "fongicide": 377107,
-      "insecticide": 102610,
+      "total": 660119,
+      "herbicide": 166977,
+      "fongicide": 377104,
+      "insecticide": 102574,
       "autres": 13463,
       "nbSubstances": 287
     },
@@ -141,154 +141,154 @@
     },
     "26": {
       "nom": "DROME",
-      "total": 824689,
-      "herbicide": 157085,
-      "fongicide": 492516,
-      "insecticide": 157558,
-      "autres": 17530,
-      "nbSubstances": 315
+      "total": 865769,
+      "herbicide": 155006,
+      "fongicide": 510208,
+      "insecticide": 181947,
+      "autres": 18608,
+      "nbSubstances": 317
     },
     "27": {
       "nom": "EURE",
-      "total": 1064563,
-      "herbicide": 730747,
-      "fongicide": 175730,
+      "total": 1061514,
+      "herbicide": 727730,
+      "fongicide": 175704,
       "insecticide": 84974,
-      "autres": 73111,
+      "autres": 73106,
       "nbSubstances": 241
     },
     "28": {
       "nom": "EURE-ET-LOIR",
-      "total": 1644007,
-      "herbicide": 1273219,
-      "fongicide": 212920,
+      "total": 1643611,
+      "herbicide": 1272826,
+      "fongicide": 212917,
       "insecticide": 26238,
       "autres": 131630,
       "nbSubstances": 244
     },
     "29": {
       "nom": "FINISTERE",
-      "total": 847767,
-      "herbicide": 344399,
-      "fongicide": 146501,
-      "insecticide": 326393,
+      "total": 847309,
+      "herbicide": 344000,
+      "fongicide": 146446,
+      "insecticide": 326389,
       "autres": 30474,
       "nbSubstances": 280
     },
     "30": {
       "nom": "GARD",
-      "total": 1379885,
-      "herbicide": 114140,
-      "fongicide": 1148040,
-      "insecticide": 102184,
+      "total": 1380051,
+      "herbicide": 113531,
+      "fongicide": 1148010,
+      "insecticide": 102989,
       "autres": 15522,
       "nbSubstances": 302
     },
     "31": {
       "nom": "HAUTE-GARONNE",
-      "total": 291280,
-      "herbicide": 215300,
-      "fongicide": 57019,
-      "insecticide": 8122,
-      "autres": 10839,
-      "nbSubstances": 272
+      "total": 242501,
+      "herbicide": 173712,
+      "fongicide": 52996,
+      "insecticide": 7274,
+      "autres": 8520,
+      "nbSubstances": 269
     },
     "32": {
       "nom": "GERS",
-      "total": 1512642,
-      "herbicide": 638517,
-      "fongicide": 783742,
-      "insecticide": 42461,
-      "autres": 47922,
+      "total": 1503829,
+      "herbicide": 629952,
+      "fongicide": 783521,
+      "insecticide": 42454,
+      "autres": 47903,
       "nbSubstances": 270
     },
     "33": {
       "nom": "GIRONDE",
-      "total": 3749760,
-      "herbicide": 506060,
-      "fongicide": 2967916,
-      "insecticide": 225775,
+      "total": 3749831,
+      "herbicide": 506117,
+      "fongicide": 2967928,
+      "insecticide": 225777,
       "autres": 50009,
       "nbSubstances": 304
     },
     "34": {
       "nom": "HERAULT",
-      "total": 1718923,
+      "total": 1718972,
       "herbicide": 108560,
-      "fongicide": 1553722,
+      "fongicide": 1553770,
       "insecticide": 53200,
       "autres": 3441,
       "nbSubstances": 269
     },
     "35": {
       "nom": "ILLE-ET-VILAINE",
-      "total": 302122,
-      "herbicide": 172521,
-      "fongicide": 57983,
-      "insecticide": 42248,
-      "autres": 29371,
+      "total": 302787,
+      "herbicide": 173030,
+      "fongicide": 58106,
+      "insecticide": 42272,
+      "autres": 29380,
       "nbSubstances": 276
     },
     "36": {
       "nom": "INDRE",
-      "total": 815352,
-      "herbicide": 641385,
-      "fongicide": 119835,
-      "insecticide": 11298,
-      "autres": 42834,
+      "total": 814689,
+      "herbicide": 640737,
+      "fongicide": 119833,
+      "insecticide": 11297,
+      "autres": 42822,
       "nbSubstances": 233
     },
     "37": {
       "nom": "INDRE-ET-LOIRE",
-      "total": 946194,
-      "herbicide": 369981,
-      "fongicide": 362408,
-      "insecticide": 180926,
-      "autres": 32879,
+      "total": 942604,
+      "herbicide": 366630,
+      "fongicide": 362190,
+      "insecticide": 180917,
+      "autres": 32867,
       "nbSubstances": 280
     },
     "38": {
       "nom": "ISERE",
-      "total": 232125,
-      "herbicide": 127532,
-      "fongicide": 74110,
-      "insecticide": 17299,
-      "autres": 13185,
+      "total": 225509,
+      "herbicide": 127092,
+      "fongicide": 68020,
+      "insecticide": 17274,
+      "autres": 13123,
       "nbSubstances": 298
     },
     "39": {
       "nom": "JURA",
-      "total": 155840,
-      "herbicide": 71326,
-      "fongicide": 76921,
-      "insecticide": 1686,
-      "autres": 5907,
-      "nbSubstances": 220
+      "total": 155751,
+      "herbicide": 71575,
+      "fongicide": 76557,
+      "insecticide": 1714,
+      "autres": 5905,
+      "nbSubstances": 221
     },
     "40": {
       "nom": "LANDES",
-      "total": 746425,
-      "herbicide": 435820,
-      "fongicide": 239350,
-      "insecticide": 31393,
-      "autres": 39862,
-      "nbSubstances": 247
+      "total": 598426,
+      "herbicide": 309564,
+      "fongicide": 232089,
+      "insecticide": 27582,
+      "autres": 29191,
+      "nbSubstances": 240
     },
     "41": {
       "nom": "LOIR-ET-CHER",
-      "total": 880565,
+      "total": 881044,
       "herbicide": 585856,
-      "fongicide": 198335,
+      "fongicide": 198813,
       "insecticide": 14276,
       "autres": 82098,
-      "nbSubstances": 267
+      "nbSubstances": 269
     },
     "42": {
       "nom": "LOIRE",
-      "total": 82491,
+      "total": 82575,
       "herbicide": 48523,
-      "fongicide": 25993,
-      "insecticide": 6428,
+      "fongicide": 26073,
+      "insecticide": 6433,
       "autres": 1547,
       "nbSubstances": 261
     },
@@ -312,11 +312,11 @@
     },
     "45": {
       "nom": "LOIRET",
-      "total": 788092,
-      "herbicide": 578662,
-      "fongicide": 127506,
+      "total": 788067,
+      "herbicide": 578659,
+      "fongicide": 127504,
       "insecticide": 18533,
-      "autres": 63391,
+      "autres": 63371,
       "nbSubstances": 272
     },
     "46": {
@@ -330,11 +330,11 @@
     },
     "47": {
       "nom": "LOT-ET-GARONNE",
-      "total": 1168599,
-      "herbicide": 362979,
-      "fongicide": 445531,
-      "insecticide": 325545,
-      "autres": 34544,
+      "total": 1160035,
+      "herbicide": 354845,
+      "fongicide": 445676,
+      "insecticide": 325657,
+      "autres": 33857,
       "nbSubstances": 308
     },
     "48": {
@@ -348,11 +348,11 @@
     },
     "49": {
       "nom": "MAINE-ET-LOIRE",
-      "total": 798825,
-      "herbicide": 244735,
-      "fongicide": 428652,
-      "insecticide": 80773,
-      "autres": 44665,
+      "total": 795030,
+      "herbicide": 241005,
+      "fongicide": 428620,
+      "insecticide": 80767,
+      "autres": 44638,
       "nbSubstances": 299
     },
     "50": {
@@ -366,29 +366,29 @@
     },
     "51": {
       "nom": "MARNE",
-      "total": 3349264,
+      "total": 3349267,
       "herbicide": 1372633,
-      "fongicide": 1609209,
+      "fongicide": 1609211,
       "insecticide": 112415,
       "autres": 255007,
       "nbSubstances": 296
     },
     "52": {
       "nom": "HAUTE-MARNE",
-      "total": 253302,
-      "herbicide": 213659,
-      "fongicide": 19456,
-      "insecticide": 2572,
-      "autres": 17615,
-      "nbSubstances": 201
+      "total": 249288,
+      "herbicide": 210322,
+      "fongicide": 19039,
+      "insecticide": 2540,
+      "autres": 17386,
+      "nbSubstances": 200
     },
     "53": {
       "nom": "MAYENNE",
-      "total": 312908,
-      "herbicide": 242275,
-      "fongicide": 42367,
-      "insecticide": 4843,
-      "autres": 23423,
+      "total": 304129,
+      "herbicide": 233434,
+      "fongicide": 42343,
+      "insecticide": 4985,
+      "autres": 23367,
       "nbSubstances": 215
     },
     "54": {
@@ -411,20 +411,20 @@
     },
     "56": {
       "nom": "MORBIHAN",
-      "total": 672902,
-      "herbicide": 410978,
-      "fongicide": 130919,
+      "total": 672633,
+      "herbicide": 410736,
+      "fongicide": 130914,
       "insecticide": 88329,
-      "autres": 42677,
+      "autres": 42654,
       "nbSubstances": 286
     },
     "57": {
       "nom": "MOSELLE",
-      "total": 595265,
-      "herbicide": 483772,
-      "fongicide": 53779,
-      "insecticide": 7342,
-      "autres": 50373,
+      "total": 594833,
+      "herbicide": 483417,
+      "fongicide": 53731,
+      "insecticide": 7338,
+      "autres": 50347,
       "nbSubstances": 221
     },
     "58": {
@@ -438,29 +438,29 @@
     },
     "59": {
       "nom": "NORD",
-      "total": 601227,
-      "herbicide": 358730,
-      "fongicide": 141278,
-      "insecticide": 32596,
+      "total": 601106,
+      "herbicide": 358684,
+      "fongicide": 141229,
+      "insecticide": 32572,
       "autres": 68622,
       "nbSubstances": 282
     },
     "60": {
       "nom": "OISE",
-      "total": 1322596,
-      "herbicide": 978916,
+      "total": 1322114,
+      "herbicide": 978434,
       "fongicide": 181910,
       "insecticide": 64139,
-      "autres": 97631,
+      "autres": 97630,
       "nbSubstances": 250
     },
     "61": {
       "nom": "ORNE",
-      "total": 950190,
-      "herbicide": 665226,
-      "fongicide": 202551,
-      "insecticide": 17455,
-      "autres": 64958,
+      "total": 948980,
+      "herbicide": 664024,
+      "fongicide": 202550,
+      "insecticide": 17450,
+      "autres": 64955,
       "nbSubstances": 243
     },
     "62": {
@@ -483,28 +483,28 @@
     },
     "64": {
       "nom": "PYRENEES-ATLANTIQUES",
-      "total": 282061,
-      "herbicide": 158174,
-      "fongicide": 98196,
-      "insecticide": 11207,
-      "autres": 14484,
-      "nbSubstances": 249
+      "total": 552635,
+      "herbicide": 345675,
+      "fongicide": 142735,
+      "insecticide": 18394,
+      "autres": 45832,
+      "nbSubstances": 260
     },
     "65": {
       "nom": "HAUTES-PYRENEES",
-      "total": 157425,
-      "herbicide": 129411,
-      "fongicide": 8535,
-      "insecticide": 6903,
-      "autres": 12577,
-      "nbSubstances": 199
+      "total": 81058,
+      "herbicide": 65773,
+      "fongicide": 5062,
+      "insecticide": 4225,
+      "autres": 5998,
+      "nbSubstances": 183
     },
     "66": {
       "nom": "PYRENEES-ORIENTALES",
-      "total": 420407,
+      "total": 420557,
       "herbicide": 40811,
-      "fongicide": 290835,
-      "insecticide": 85891,
+      "fongicide": 290980,
+      "insecticide": 85896,
       "autres": 2871,
       "nbSubstances": 223
     },
@@ -528,56 +528,56 @@
     },
     "69": {
       "nom": "RHONE",
-      "total": 316380,
-      "herbicide": 60738,
-      "fongicide": 236809,
-      "insecticide": 15307,
-      "autres": 3526,
+      "total": 317334,
+      "herbicide": 61011,
+      "fongicide": 238061,
+      "insecticide": 14742,
+      "autres": 3520,
       "nbSubstances": 279
     },
     "70": {
       "nom": "HAUTE-SAONE",
-      "total": 244172,
-      "herbicide": 175421,
-      "fongicide": 45249,
-      "insecticide": 2497,
-      "autres": 21006,
+      "total": 246261,
+      "herbicide": 178570,
+      "fongicide": 43948,
+      "insecticide": 2528,
+      "autres": 21216,
       "nbSubstances": 203
     },
     "71": {
       "nom": "SAONE-ET-LOIRE",
-      "total": 1045671,
-      "herbicide": 304677,
-      "fongicide": 708976,
-      "insecticide": 6913,
+      "total": 1047940,
+      "herbicide": 304733,
+      "fongicide": 711185,
+      "insecticide": 6917,
       "autres": 25105,
       "nbSubstances": 262
     },
     "72": {
       "nom": "SARTHE",
-      "total": 400558,
-      "herbicide": 267944,
-      "fongicide": 93699,
-      "insecticide": 7812,
-      "autres": 31103,
+      "total": 398258,
+      "herbicide": 265747,
+      "fongicide": 93612,
+      "insecticide": 7810,
+      "autres": 31090,
       "nbSubstances": 252
     },
     "73": {
       "nom": "SAVOIE",
-      "total": 86621,
-      "herbicide": 13726,
-      "fongicide": 63305,
-      "insecticide": 7731,
-      "autres": 1860,
+      "total": 86546,
+      "herbicide": 13622,
+      "fongicide": 63352,
+      "insecticide": 7714,
+      "autres": 1858,
       "nbSubstances": 224
     },
     "74": {
       "nom": "HAUTE-SAVOIE",
-      "total": 98674,
-      "herbicide": 23121,
-      "fongicide": 27881,
-      "insecticide": 45535,
-      "autres": 2137,
+      "total": 98345,
+      "herbicide": 22942,
+      "fongicide": 27749,
+      "insecticide": 45537,
+      "autres": 2117,
       "nbSubstances": 243
     },
     "75": {
@@ -591,11 +591,11 @@
     },
     "76": {
       "nom": "SEINE-MARITIME",
-      "total": 992174,
-      "herbicide": 643595,
-      "fongicide": 181072,
+      "total": 988801,
+      "herbicide": 640264,
+      "fongicide": 181031,
       "insecticide": 101812,
-      "autres": 65696,
+      "autres": 65695,
       "nbSubstances": 264
     },
     "77": {
@@ -618,21 +618,21 @@
     },
     "79": {
       "nom": "DEUX-SEVRES",
-      "total": 687148,
-      "herbicide": 506018,
-      "fongicide": 133783,
-      "insecticide": 15036,
-      "autres": 32312,
+      "total": 685171,
+      "herbicide": 504062,
+      "fongicide": 133765,
+      "insecticide": 15033,
+      "autres": 32311,
       "nbSubstances": 242
     },
     "80": {
       "nom": "SOMME",
-      "total": 1986963,
-      "herbicide": 1181494,
-      "fongicide": 348271,
-      "insecticide": 235127,
-      "autres": 222071,
-      "nbSubstances": 270
+      "total": 1990635,
+      "herbicide": 1182343,
+      "fongicide": 347928,
+      "insecticide": 235181,
+      "autres": 225182,
+      "nbSubstances": 267
     },
     "81": {
       "nom": "TARN",
@@ -645,9 +645,9 @@
     },
     "82": {
       "nom": "TARN-ET-GARONNE",
-      "total": 905639,
-      "herbicide": 377200,
-      "fongicide": 358100,
+      "total": 905922,
+      "herbicide": 377258,
+      "fongicide": 358326,
       "insecticide": 148840,
       "autres": 21498,
       "nbSubstances": 293
@@ -672,12 +672,12 @@
     },
     "85": {
       "nom": "VENDEE",
-      "total": 549013,
-      "herbicide": 387318,
-      "fongicide": 94157,
+      "total": 549115,
+      "herbicide": 387334,
+      "fongicide": 94243,
       "insecticide": 31242,
       "autres": 36296,
-      "nbSubstances": 262
+      "nbSubstances": 263
     },
     "86": {
       "nom": "VIENNE",
@@ -708,11 +708,11 @@
     },
     "89": {
       "nom": "YONNE",
-      "total": 911443,
-      "herbicide": 526303,
-      "fongicide": 340771,
-      "insecticide": 11436,
-      "autres": 32932,
+      "total": 911914,
+      "herbicide": 526074,
+      "fongicide": 340818,
+      "insecticide": 11437,
+      "autres": 33585,
       "nbSubstances": 275
     },
     "90": {
@@ -762,8 +762,8 @@
     },
     "95": {
       "nom": "VAL-D'OISE",
-      "total": 158130,
-      "herbicide": 87783,
+      "total": 157588,
+      "herbicide": 87241,
       "fongicide": 12026,
       "insecticide": 48219,
       "autres": 10102,
@@ -771,12 +771,12 @@
     },
     "971": {
       "nom": "GUADELOUPE",
-      "total": 60020,
-      "herbicide": 46201,
-      "fongicide": 9621,
-      "insecticide": 3156,
-      "autres": 1043,
-      "nbSubstances": 106
+      "total": 60346,
+      "herbicide": 46352,
+      "fongicide": 9680,
+      "insecticide": 3259,
+      "autres": 1054,
+      "nbSubstances": 107
     },
     "972": {
       "nom": "MARTINIQUE",
@@ -789,39 +789,21 @@
     },
     "974": {
       "nom": "LA REUNION",
-      "total": 159641,
-      "herbicide": 124055,
+      "total": 159384,
+      "herbicide": 123809,
       "fongicide": 18500,
       "insecticide": 13465,
-      "autres": 3622,
+      "autres": 3610,
       "nbSubstances": 161
     },
-    "07": {
-      "nom": "ARDECHE",
-      "total": 33419,
-      "herbicide": 4295,
-      "fongicide": 28585,
-      "insecticide": 355,
-      "autres": 184,
-      "nbSubstances": 157
-    },
-    "02": {
-      "nom": "AISNE",
-      "total": 2188187,
-      "herbicide": 1352239,
-      "fongicide": 437477,
-      "insecticide": 200395,
-      "autres": 198077,
-      "nbSubstances": 271
-    },
-    "2B": {
-      "nom": "HAUTE-CORSE",
-      "total": 382731,
-      "herbicide": 38717,
-      "fongicide": 173742,
-      "insecticide": 164213,
-      "autres": 6059,
-      "nbSubstances": 191
+    "03": {
+      "nom": "ALLIER",
+      "total": 442670,
+      "herbicide": 343658,
+      "fongicide": 61502,
+      "insecticide": 7089,
+      "autres": 30421,
+      "nbSubstances": 240
     },
     "04": {
       "nom": "ALPES-DE-HAUTE-PROVENCE",
@@ -832,15 +814,6 @@
       "autres": 4964,
       "nbSubstances": 250
     },
-    "09": {
-      "nom": "ARIEGE",
-      "total": 64873,
-      "herbicide": 53955,
-      "fongicide": 7581,
-      "insecticide": 1346,
-      "autres": 1992,
-      "nbSubstances": 189
-    },
     "06": {
       "nom": "ALPES-MARITIMES",
       "total": 34374,
@@ -850,14 +823,50 @@
       "autres": 1190,
       "nbSubstances": 181
     },
-    "03": {
-      "nom": "ALLIER",
-      "total": 442828,
-      "herbicide": 343814,
-      "fongicide": 61503,
-      "insecticide": 7090,
-      "autres": 30421,
-      "nbSubstances": 240
+    "02": {
+      "nom": "AISNE",
+      "total": 2186683,
+      "herbicide": 1351232,
+      "fongicide": 436979,
+      "insecticide": 200395,
+      "autres": 198077,
+      "nbSubstances": 271
+    },
+    "05": {
+      "nom": "HAUTES-ALPES",
+      "total": 1589,
+      "herbicide": 1010,
+      "fongicide": 316,
+      "insecticide": 151,
+      "autres": 113,
+      "nbSubstances": 69
+    },
+    "2B": {
+      "nom": "HAUTE-CORSE",
+      "total": 382731,
+      "herbicide": 38717,
+      "fongicide": 173742,
+      "insecticide": 164213,
+      "autres": 6059,
+      "nbSubstances": 191
+    },
+    "01": {
+      "nom": "AIN",
+      "total": 484706,
+      "herbicide": 240146,
+      "fongicide": 196435,
+      "insecticide": 31093,
+      "autres": 17031,
+      "nbSubstances": 285
+    },
+    "09": {
+      "nom": "ARIEGE",
+      "total": 64076,
+      "herbicide": 53220,
+      "fongicide": 7561,
+      "insecticide": 1341,
+      "autres": 1954,
+      "nbSubstances": 189
     },
     "08": {
       "nom": "ARDENNES",
@@ -868,14 +877,14 @@
       "autres": 62969,
       "nbSubstances": 223
     },
-    "01": {
-      "nom": "AIN",
-      "total": 487006,
-      "herbicide": 241731,
-      "fongicide": 197045,
-      "insecticide": 31210,
-      "autres": 17020,
-      "nbSubstances": 285
+    "07": {
+      "nom": "ARDECHE",
+      "total": 33419,
+      "herbicide": 4295,
+      "fongicide": 28585,
+      "insecticide": 355,
+      "autres": 184,
+      "nbSubstances": 157
     },
     "2A": {
       "nom": "CORSE-DU-SUD",
@@ -885,15 +894,6 @@
       "insecticide": 2780,
       "autres": 137,
       "nbSubstances": 112
-    },
-    "05": {
-      "nom": "HAUTES-ALPES",
-      "total": 1589,
-      "herbicide": 1010,
-      "fongicide": 316,
-      "insecticide": 151,
-      "autres": 113,
-      "nbSubstances": 69
     }
   }
 }
