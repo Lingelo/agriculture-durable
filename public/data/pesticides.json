@@ -1,7 +1,7 @@
 {
   "meta": {
     "year": 2023,
-    "generatedAt": "2026-06-01T11:33:05.094Z"
+    "generatedAt": "2026-06-08T10:53:40.199Z"
   },
   "departments": {
     "10": {
@@ -796,6 +796,60 @@
       "autres": 3610,
       "nbSubstances": 161
     },
+    "02": {
+      "nom": "AISNE",
+      "total": 2186683,
+      "herbicide": 1351232,
+      "fongicide": 436979,
+      "insecticide": 200395,
+      "autres": 198077,
+      "nbSubstances": 271
+    },
+    "2B": {
+      "nom": "HAUTE-CORSE",
+      "total": 382731,
+      "herbicide": 38717,
+      "fongicide": 173742,
+      "insecticide": 164213,
+      "autres": 6059,
+      "nbSubstances": 191
+    },
+    "08": {
+      "nom": "ARDENNES",
+      "total": 467946,
+      "herbicide": 278796,
+      "fongicide": 76749,
+      "insecticide": 49432,
+      "autres": 62969,
+      "nbSubstances": 223
+    },
+    "05": {
+      "nom": "HAUTES-ALPES",
+      "total": 1589,
+      "herbicide": 1010,
+      "fongicide": 316,
+      "insecticide": 151,
+      "autres": 113,
+      "nbSubstances": 69
+    },
+    "09": {
+      "nom": "ARIEGE",
+      "total": 64076,
+      "herbicide": 53220,
+      "fongicide": 7561,
+      "insecticide": 1341,
+      "autres": 1954,
+      "nbSubstances": 189
+    },
+    "06": {
+      "nom": "ALPES-MARITIMES",
+      "total": 34374,
+      "herbicide": 7313,
+      "fongicide": 11058,
+      "insecticide": 14812,
+      "autres": 1190,
+      "nbSubstances": 181
+    },
     "03": {
       "nom": "ALLIER",
       "total": 442670,
@@ -814,42 +868,6 @@
       "autres": 4964,
       "nbSubstances": 250
     },
-    "06": {
-      "nom": "ALPES-MARITIMES",
-      "total": 34374,
-      "herbicide": 7313,
-      "fongicide": 11058,
-      "insecticide": 14812,
-      "autres": 1190,
-      "nbSubstances": 181
-    },
-    "02": {
-      "nom": "AISNE",
-      "total": 2186683,
-      "herbicide": 1351232,
-      "fongicide": 436979,
-      "insecticide": 200395,
-      "autres": 198077,
-      "nbSubstances": 271
-    },
-    "05": {
-      "nom": "HAUTES-ALPES",
-      "total": 1589,
-      "herbicide": 1010,
-      "fongicide": 316,
-      "insecticide": 151,
-      "autres": 113,
-      "nbSubstances": 69
-    },
-    "2B": {
-      "nom": "HAUTE-CORSE",
-      "total": 382731,
-      "herbicide": 38717,
-      "fongicide": 173742,
-      "insecticide": 164213,
-      "autres": 6059,
-      "nbSubstances": 191
-    },
     "01": {
       "nom": "AIN",
       "total": 484706,
@@ -859,23 +877,14 @@
       "autres": 17031,
       "nbSubstances": 285
     },
-    "09": {
-      "nom": "ARIEGE",
-      "total": 64076,
-      "herbicide": 53220,
-      "fongicide": 7561,
-      "insecticide": 1341,
-      "autres": 1954,
-      "nbSubstances": 189
-    },
-    "08": {
-      "nom": "ARDENNES",
-      "total": 467946,
-      "herbicide": 278796,
-      "fongicide": 76749,
-      "insecticide": 49432,
-      "autres": 62969,
-      "nbSubstances": 223
+    "2A": {
+      "nom": "CORSE-DU-SUD",
+      "total": 25958,
+      "herbicide": 1853,
+      "fongicide": 21189,
+      "insecticide": 2780,
+      "autres": 137,
+      "nbSubstances": 112
     },
     "07": {
       "nom": "ARDECHE",
@@ -885,15 +894,6 @@
       "insecticide": 355,
       "autres": 184,
       "nbSubstances": 157
-    },
-    "2A": {
-      "nom": "CORSE-DU-SUD",
-      "total": 25958,
-      "herbicide": 1853,
-      "fongicide": 21189,
-      "insecticide": 2780,
-      "autres": 137,
-      "nbSubstances": 112
     }
   }
 }
